@@ -99,22 +99,22 @@ vim.keymap.set('n', '<leader>Y', [["+Y]])
 local diagnostics_active = true
 
 vim.keymap.set('n', '<leader>do', function()
-  diagnostics_active = not diagnostics_active
+	diagnostics_active = not diagnostics_active
 
-  if diagnostics_active then
-    vim.diagnostic.enable(true)
-  else
-    vim.diagnostic.enable(false)
-  end
+	if diagnostics_active then
+		vim.diagnostic.enable(true)
+	else
+		vim.diagnostic.enable(false)
+	end
 end)
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', function()
-  vim.diagnostic.jump { count = -1, float = true }
+	vim.diagnostic.jump { count = -1, float = true }
 end, { desc = 'Go to previous diagnostic message' })
 
 vim.keymap.set('n', ']d', function()
-  vim.diagnostic.jump { count = 1, float = true }
+	vim.diagnostic.jump { count = 1, float = true }
 end, { desc = 'Go to next diagnostic message' })
 
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
