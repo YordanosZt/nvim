@@ -56,7 +56,7 @@ vim.keymap.set('n', '<leader>-', '<C-x>', opts) -- decrement
 vim.keymap.set('n', '<leader>v', '<C-w>v', opts) -- split window vertically
 vim.keymap.set('n', '<leader>h', '<C-w>s', opts) -- split window horizontally
 vim.keymap.set('n', '<leader>se', '<C-w>=', opts) -- make split windows equal width & height
-vim.keymap.set('n', '<leader>xs', ':close<CR>', opts) -- close current split window
+vim.keymap.set('n', '<leader>q', ':close<CR>', opts) -- close current split window
 
 -- Navigate between splits
 vim.keymap.set('n', '<C-k>', ':wincmd k<CR>', opts)
@@ -94,32 +94,3 @@ vim.keymap.set('n', '<leader>j', '*``cgn', opts)
 -- Explicitly yank to system clipboard (highlighted and entire row)
 vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
 vim.keymap.set('n', '<leader>Y', [["+Y]])
-
--- Toggle diagnostics
-local diagnostics_active = true
-
-vim.keymap.set('n', '<leader>do', function()
-	diagnostics_active = not diagnostics_active
-
-	if diagnostics_active then
-		vim.diagnostic.enable(true)
-	else
-		vim.diagnostic.enable(false)
-	end
-end)
-
--- Diagnostic keymaps
-vim.keymap.set('n', '[d', function()
-	vim.diagnostic.jump { count = -1, float = true }
-end, { desc = 'Go to previous diagnostic message' })
-
-vim.keymap.set('n', ']d', function()
-	vim.diagnostic.jump { count = 1, float = true }
-end, { desc = 'Go to next diagnostic message' })
-
-vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
-
--- Save and load session
-vim.keymap.set('n', '<leader>ss', ':mksession! .session.vim<CR>', { noremap = true, silent = false })
-vim.keymap.set('n', '<leader>sl', ':source .session.vim<CR>', { noremap = true, silent = false })
