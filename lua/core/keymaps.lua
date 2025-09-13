@@ -5,6 +5,9 @@ vim.g.maplocalleader = ' '
 -- For conciseness
 local opts = { noremap = true, silent = true }
 
+-- Semi-colon to colon
+vim.keymap.set('n', ';', ':')
+
 -- Disable the spacebar key's default behavior in Normal and Visual modes
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
