@@ -77,8 +77,9 @@ vim.keymap.set('n', '<leader>tp', ':tabp<CR>', opts) --  go to previous tab
 vim.keymap.set('n', '<leader>lw', '<cmd>set wrap!<CR>', opts)
 
 -- Press jk fast to exit insert mode
-vim.keymap.set('i', 'jk', '<ESC>', opts)
-vim.keymap.set('i', 'kj', '<ESC>', opts)
+--vim.keymap.set('i', 'jk', '<ESC>', opts)
+--vim.keymap.set('i', 'kj', '<ESC>', opts)
+vim.keymap.set({'i', 'v'}, 'fj', '<ESC>', opts)
 
 -- Stay in indent mode
 vim.keymap.set('v', '<', '<gv', opts)

@@ -1,5 +1,6 @@
 --vim.o.hlsearch = false -- Set highlight on search
 vim.wo.number = true -- Make line numbers default
+vim.o.relativenumber = true -- set relative numbered lines
 vim.o.mouse = 'a' -- Enable mouse mode
 --vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim.
 vim.o.breakindent = true -- Enable break indent
@@ -18,7 +19,6 @@ vim.o.wrap = false -- display lines as one long line
 vim.o.linebreak = true -- companion to wrap don't split words
 vim.o.scrolloff = 4 -- minimal number of screen lines to keep above and below the cursor
 vim.o.sidescrolloff = 8 -- minimal number of screen columns either side of cursor if wrap is `false`
-vim.o.relativenumber = true -- set relative numbered lines
 vim.o.numberwidth = 4 -- set number column width to 2 {default 4}
 vim.o.shiftwidth = 4 -- the number of spaces inserted for each indentation
 vim.o.tabstop = 4 -- insert n spaces for a tab
